@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('user_domicilio', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->text('domicilio');
             $table->integer('numero_exterior');
             $table->text('colonia');
             $table->string('cp');
             $table->text('ciudad');
+           
            
         });
     }
